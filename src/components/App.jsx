@@ -30,12 +30,12 @@ export class App extends Component {
   };
 
   addContact = newContact => {
-    this.state.contacts.filter(
+    this.state.contacts.find(
       contact =>
         contact.name.toLowerCase().trim() ===
           newContact.name.toLowerCase().trim() ||
         contact.number.trim() === newContact.number.trim() 
-    ).length
+    )
       ? alert(`${newContact.name}: is already in contacts`)
       : this.setState(prevState => {
           return {
